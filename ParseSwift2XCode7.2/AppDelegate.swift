@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // ---> setApplicationId
+        // Substitua pelos credencias do seu App gerados no Parse:
+        // Parse.setApplicationId("your_application_id", clientKey: "your_client_key")
+        // Exemplo: 
+        // ---> Apague a linha "Parse.setApplicationId("OZ347hEY0XA7P4X1amOMrh8mXtGYWRHiNw8fzBIv", clientKey: "SyvCWYRewFdjrcOyudJNeHTqxWZxM8ZpaBMWlkTb")" assim que você colocar suas credenciais
+        Parse.setApplicationId("OZ347hEY0XA7P4X1amOMrh8mXtGYWRHiNw8fzBIv", clientKey: "SyvCWYRewFdjrcOyudJNeHTqxWZxM8ZpaBMWlkTb")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         return true
     }
 
